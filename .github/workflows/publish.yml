@@ -15,7 +15,7 @@ jobs:
       id: latest_version
       uses: abatilo/release-info-action@v1.3.0
       with:
-        owner: PythonistaGuild
+        owner: ArikSquad
         repo: Wavelink
 
     - name: Set up Python
