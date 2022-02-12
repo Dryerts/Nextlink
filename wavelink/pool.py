@@ -40,8 +40,8 @@ from typing import (
 )
 
 import aiohttp
-import discord
-from discord.enums import try_enum
+import nextcord
+from nextcord.enums import try_enum
 
 from . import abc
 from .enums import *
@@ -83,25 +83,25 @@ class Node:
 
     def __init__(
         self,
-        bot: discord.Client,
+        bot: nextcord.Client,
         host: str,
         port: int,
         password: str,
         https: bool,
         heartbeat: float,
-        region: Optional[discord.VoiceRegion],
+        region: Optional[nextcord.VoiceRegion],
         spotify: Optional[spotify.SpotifyClient],
         identifier: str,
         dumps: Callable[[Any], str],
         resume_key: Optional[str],
     ):
-        self.bot: discord.Client = bot
+        self.bot: nextcord.Client = bot
         self._host: str = host
         self._port: int = port
         self._password: str = password
         self._https: bool = https
         self._heartbeat: float = heartbeat
-        self._region: Optional[discord.VoiceRegion] = region
+        self._region: Optional[nextcord.VoiceRegion] = region
         self._spotify = spotify
         self._identifier: str = identifier
 
@@ -128,7 +128,7 @@ class Node:
         return self._port
 
     @property
-    def region(self) -> Optional[discord.VoiceRegion]:
+    def region(self) -> Optional[nextcord.VoiceRegion]:
         """The voice region of the Node."""
         return self._region
 
@@ -293,7 +293,7 @@ class Node:
 
         return cls(identifier, data)
 
-    def get_player(self, guild: discord.Guild) -> Optional[Player]:
+    def get_player(self, guild: nextcord.Guild) -> Optional[Player]:
         """Returns a :class:`Player` object playing in a specific :class:`discord.Guild`.
 
         Parameters
@@ -352,13 +352,13 @@ class NodePool:
     async def create_node(
         cls,
         *,
-        bot: discord.Client,
+        bot: nextcord.Client,
         host: str,
         port: int,
         password: str,
         https: bool = False,
         heartbeat: float = 30,
-        region: Optional[discord.VoiceRegion] = None,
+        region: Optional[nextcord.VoiceRegion] = None,
         spotify_client: Optional[spotify.SpotifyClient] = None,
         identifier: str = MISSING,
         dumps: Callable[[Any], str] = json.dumps,
@@ -425,7 +425,7 @@ class NodePool:
 
     @classmethod
     def get_node(
-        cls, *, identifier: str = MISSING, region: discord.VoiceRegion = MISSING
+        cls, *, identifier: str = MISSING, region: nextcord.VoiceRegion = MISSING
     ) -> Node:
         """Retrieve a Node from the NodePool.
 
