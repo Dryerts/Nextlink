@@ -50,7 +50,7 @@ with open("README.rst") as f:
 setup(
     name="wavelink",
     author="PythonistaGuild, EvieePy",
-    url="https://github.com/PythonistaGuild/Wavelink",
+    url="https://github.com/ArikSquad/Wavelink",
     version=VERSION,
     packages=["wavelink", "wavelink.ext.spotify", "wavelink.types"],
     license="MIT",
