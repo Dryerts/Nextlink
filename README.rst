@@ -63,7 +63,7 @@ A quick and easy bot example:
 .. code:: py
     
     import wavelink
-    from discord.ext import commands
+    from nextcord.ext import commands
 
 
     class Bot(commands.Bot):
