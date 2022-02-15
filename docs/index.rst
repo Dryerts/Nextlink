@@ -1,13 +1,13 @@
-Welcome to WaveLink's Documentation!
+Welcome to NextLink's Documentation!
 ========================================
 
-WaveLink is a powerful and robust Lavalink wrapper for Discord.py.
+NextLink is a powerful and robust Lavalink wrapper for Discord.py.
 
 
 Help and Support
 ------------------
 
-- `GitHub <https://github.com/PythonistaGuild/Wavelink>`_
+- `Original GitHub <https://github.com/PythonistaGuild/Wavelink>`_
 - `Discord <https://discord.gg/RAKc3HF>`_
 
 

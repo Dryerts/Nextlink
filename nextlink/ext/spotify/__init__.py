@@ -31,9 +31,9 @@ from typing import List, Optional, Type, TypeVar, Union
 import aiohttp
 from nextcord.ext import commands
 
-import wavelink
-from wavelink import Node, NodePool, PartialTrack, YouTubeTrack
-from wavelink.utils import MISSING
+import nextlink
+from nextlink import Node, NodePool, PartialTrack, YouTubeTrack
+from nextlink.utils import MISSING
 
 
 __all__ = ('SpotifySearchType',
@@ -71,7 +71,7 @@ def decode_url(url: str) -> Optional[dict]:
 
     .. code:: python3
 
-        from wavelink.ext import spotify
+        from nextlink.ext import spotify
 
         ...
 
@@ -147,7 +147,7 @@ class SpotifyAsyncIterator:
         if self._partial:
             track = PartialTrack(query=f'{track["name"]} - {track["artists"][0]["name"]}')
         else:
-            track = (await wavelink.YouTubeTrack.search(query=f'{track["name"]} -'
+            track = (await nextlink.YouTubeTrack.search(query=f'{track["name"]} -'
                                                               f' {track["artists"][0]["name"]}'))[0]
 
         self._count += 1
@@ -232,11 +232,11 @@ class SpotifyClient:
             data = await resp.json()
 
             if data['type'] == 'track':
-                return await wavelink.YouTubeTrack.search(f'{data["name"]} - {data["artists"][0]["name"]}')
+                return await nextlink.YouTubeTrack.search(f'{data["name"]} - {data["artists"][0]["name"]}')
 
             elif data['type'] == 'album' and iterator is False:
                 tracks = data['tracks']['items']
-                return [(await wavelink.YouTubeTrack.search(f'{t["name"]} - {t["artists"][0]["name"]}'))[0]
+                return [(await nextlink.YouTubeTrack.search(f'{t["name"]} - {t["artists"][0]["name"]}'))[0]
                         for t in tracks]
 
             elif data['type'] == 'playlist' and iterator is False:
@@ -245,7 +245,7 @@ class SpotifyClient:
 
                 for track in tracks:
                     t = track['track']
-                    ret.append((await wavelink.YouTubeTrack.search(f'{t["name"]} - {t["artists"][0]["name"]}'))[0])
+                    ret.append((await nextlink.YouTubeTrack.search(f'{t["name"]} - {t["artists"][0]["name"]}'))[0])
 
                 return ret
 
@@ -338,7 +338,7 @@ class SpotifyTrack(YouTubeTrack):
         node: Optional[:class:`Node`]
             An optional node to use when querying for tracks. Defaults to best available.
         partial_tracks: Optional[bool]
-            Whether or not to create :class:`wavelink.tracks.PartialTrack` objects for search at playtime.
+            Whether or not to create :class:`nextlink.tracks.PartialTrack` objects for search at playtime.
             This can make queuing large albums or playlists considerably faster, but with less information.
             Defaults to False.
 

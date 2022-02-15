@@ -1,6 +1,6 @@
 Frequently Asked Questions
 ==================================
-Frequently asked questions for WaveLink and Lavalink.
+Frequently asked questions for Nextlink and Lavalink.
 
 .. contents:: Questions
     :local:

@@ -7,7 +7,7 @@ parser.add_argument("--latest")
 args = parser.parse_args()
 
 
-with open("../../wavelink/__init__.py", "r+") as fp:
+with open("../../nextlink/__init__.py", "r+") as fp:
     data = fp.read()
 
     data = re.sub(r"__version__ = \"\d+.\d+.\d+\"", f'__version__ = "{args.latest.removeprefix("v")}"', data)

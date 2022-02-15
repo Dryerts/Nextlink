@@ -188,7 +188,7 @@ class Node:
         Returns
         -------
         List[:class:`abc.Playable`]:
-            A list of wavelink track objects.
+            A list of nextlink track objects.
 
         Raises
         ------
@@ -237,7 +237,7 @@ class Node:
         Returns
         -------
         Optional[:class:`abc.Playlist`]:
-            The related wavelink track object or ``None`` if none was found.
+            The related nextlink track object or ``None`` if none was found.
 
         Raises
         ------

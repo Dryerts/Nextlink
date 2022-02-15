@@ -28,7 +28,7 @@ from typing import Any, Dict, TYPE_CHECKING, Tuple, Optional
 
 import aiohttp
 
-import wavelink
+import nextlink
 from .utils import MISSING
 
 if TYPE_CHECKING:
@@ -103,7 +103,7 @@ class Websocket:
             await self.send(**resume)
 
     async def listen(self) -> None:
-        backoff = wavelink.Backoff(base=1, maximum_time=60, maximum_tries=None)
+        backoff = nextlink.Backoff(base=1, maximum_time=60, maximum_tries=None)
 
         while True:
             assert isinstance(self.websocket, aiohttp.ClientWebSocketResponse)
@@ -140,7 +140,7 @@ class Websocket:
             return
 
         if op == "stats":
-            self.node.stats = wavelink.Stats(self.node, data)
+            self.node.stats = nextlink.Stats(self.node, data)
             return
 
         try:
@@ -178,7 +178,7 @@ class Websocket:
 
         if name.startswith("Track"):
             base64_ = data.get('track')
-            track = await self.node.build_track(cls=wavelink.Track, identifier=base64_)
+            track = await self.node.build_track(cls=nextlink.Track, identifier=base64_)
 
             payload["track"] = track
 

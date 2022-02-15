@@ -40,7 +40,7 @@ if on_rtd:
     with open("docs/requirements_rtd.txt") as f:
         requirements.extend(f.read().splitlines())
 
-with open(ROOT / "wavelink" / "__init__.py", encoding="utf-8") as f:
+with open(ROOT / "nextlink" / "__init__.py", encoding="utf-8") as f:
     VERSION = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
 
 readme = ""
@@ -48,11 +48,11 @@ with open("README.rst") as f:
     readme = f.read()
 
 setup(
-    name="wavelink",
-    author="PythonistaGuild, EvieePy",
-    url="https://github.com/ArikSquad/Wavelink",
+    name="nextlink",
+    author="ArikSquad",
+    url="https://github.com/ArikSquad/Nextlink",
     version=VERSION,
-    packages=["wavelink", "wavelink.ext.spotify", "wavelink.types"],
+    packages=["nextlink", "nextlink.ext.spotify", "nextlink.types"],
     license="MIT",
     description="A robust and powerful Lavalink wrapper for discord.py and derivatives.",
     long_description=readme,
