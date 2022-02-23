@@ -19,7 +19,8 @@
     :target: https://github.com/PythonistaGuild/Wavelink/commits/main
     :alt: Maintenance
 
-THIS IS A WAVELINK FORK, PLEASE VISIT `WAVELINK <https://github.com/PythonistaGuild/Wavelink>`_ IF YOU DONT KNOW WHAT YOU ARE DOING!
+THIS IS A WAVELINK FORK, PLEASE VISIT `WAVELINK <https://github.com/PythonistaGuild/Wavelink>`_, IF YOU DONT KNOW WHAT YOU ARE DOING!
+----------------------------
 
 NextLink is a robust and powerful Lavalink wrapper for `Nextcord <https://github.com/nextcord/nextcord>`_.
 NextLink features a fully asynchronous API that's intuitive and easy to use with built in Spotify Support and Node Pool Balancing.
