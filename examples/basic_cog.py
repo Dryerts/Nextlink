@@ -1,6 +1,6 @@
 """MIT License
 
-Copyright (c) 2021 MikArt
+Copyright (c) 2022 MikArt, PythonistaGuild
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -35,7 +35,7 @@ class Bot(commands.Bot):
 
 
 class Music(commands.Cog):
-    """Music cog to hold Wavelink related commands and listeners."""
+    """Music cog to hold NextLink related commands and listeners."""
 
     def __init__(self, bot: commands.Bot):
         self.bot = bot
@@ -46,26 +46,26 @@ class Music(commands.Cog):
         """Connect to our Lavalink nodes."""
         await self.bot.wait_until_ready()
 
-        await wavelink.NodePool.create_node(bot=self.bot,
+        await nextlink.NodePool.create_node(bot=self.bot,
                                             host='0.0.0.0',
                                             port=2333,
                                             password='YOUR_LAVALINK_PASSWORD')
 
     @commands.Cog.listener()
-    async def on_wavelink_node_ready(self, node: wavelink.Node):
+    async def on_nextlink_node_ready(self, node: nextlink.Node):
         """Event fired when a node has finished connecting."""
         print(f'Node: <{node.identifier}> is ready!')
 
     @commands.command()
-    async def play(self, ctx: commands.Context, *, search: wavelink.YouTubeTrack):
+    async def play(self, ctx: commands.Context, *, search: nextlink.YouTubeTrack):
         """Play a song with the given search query.
 
         If not connected, connect to our voice channel.
         """
         if not ctx.voice_client:
-            vc: wavelink.Player = await ctx.author.voice.channel.connect(cls=wavelink.Player)
+            vc: nextlink.Player = await ctx.author.voice.channel.connect(cls=nextlink.Player)
         else:
-            vc: wavelink.Player = ctx.voice_client
+            vc: nextlink.Player = ctx.voice_client
 
         await vc.play(search)
 
