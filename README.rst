@@ -19,9 +19,10 @@
     :target: https://github.com/PythonistaGuild/Wavelink/commits/main
     :alt: Maintenance
 
+THIS IS A WAVELINK FORK, PLEASE VISIT `WAVELINK <https://github.com/PythonistaGuild/Wavelink>`_, IF YOU DONT KNOW WHAT YOU ARE DOING!
+----------------------------
 
-
-NextLink is a robust and powerful Lavalink wrapper for `Nextcord <https://github.com/nextcord/nextcord>`_ and certain supported forks.
+NextLink is a robust and powerful Lavalink wrapper for `Nextcord <https://github.com/nextcord/nextcord>`_.
 NextLink features a fully asynchronous API that's intuitive and easy to use with built in Spotify Support and Node Pool Balancing.
 
 Documentation
@@ -47,13 +48,13 @@ The following commands are currently the valid ways of installing WaveLink.
 
 .. code:: sh
 
-    py -3.9 -m pip install -U Wavelink
+    py -3.9 -m pip install git+https://github.com/ArikSquad/Nextlink
 
 **Linux**
 
 .. code:: sh
 
-    python3.9 -m pip install -U Wavelink
+    python3.9 -m pip install -U git+https://github.com/ArikSquad/Nextlink
 
 Getting Started
 ----------------------------
