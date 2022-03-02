@@ -1,6 +1,6 @@
 """MIT License
 
-Copyright (c) 2019-2021 PythonistaGuild
+Copyright (c) 2022 MikArt, PythonistaGuild
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -48,7 +48,7 @@ VoiceChannel = Union[
 
 
 class Player(nextcord.VoiceProtocol):
-    """WaveLink Player object.
+    """Nextlink Player object.
 
     This class subclasses :class:`discord.VoiceProtocol` and such should be treated as one with additions.
 
@@ -202,7 +202,7 @@ class Player(nextcord.VoiceProtocol):
     ):
         """|coro|
 
-        Play a WaveLink Track.
+        Play a Nextlink Track.
 
         Parameters
         ----------
@@ -218,7 +218,7 @@ class Player(nextcord.VoiceProtocol):
 
         Returns
         -------
-        :class:`wavelink.abc.Playable`
+        :class:`Nextlink.abc.Playable`
             The track that is now playing.
         """
         if replace or not self.is_playing():

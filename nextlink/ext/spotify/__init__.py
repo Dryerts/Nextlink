@@ -1,6 +1,6 @@
 """MIT License
 
-Copyright (c) 2019-2021 PythonistaGuild
+Copyright (c) 2022 MikArt, PythonistaGuild
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -292,7 +292,7 @@ class SpotifyTrack(YouTubeTrack):
             The song to search for.
         type: Optional[:class:`spotify.SpotifySearchType`]
             An optional enum value to use when searching with Spotify. Defaults to track.
-        node: Optional[:class:`wavelink.Node`]
+        node: Optional[:class:`nextlink.Node`]
             An optional Node to use to make the search with.
         return_first: Optional[bool]
             An optional bool which when set to True will return only the first track found. Defaults to False.

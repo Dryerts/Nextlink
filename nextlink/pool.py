@@ -1,6 +1,6 @@
 """MIT License
 
-Copyright (c) 2019-2021 PythonistaGuild
+Copyright (c) 2022 MikArt, PythonistaGuild
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -69,7 +69,7 @@ logger: logging.Logger = logging.getLogger(__name__)
 
 
 class Node:
-    """WaveLink Node object.
+    """NextLink Node object.
 
     Attributes
     ----------
@@ -115,7 +115,7 @@ class Node:
         self.resume_key = resume_key or str(os.urandom(8).hex())
 
     def __repr__(self) -> str:
-        return f"<WaveLink Node: <{self.identifier}>, Region: <{self.region}>, Players: <{len(self._players)}>>"
+        return f"<NextLink Node: <{self.identifier}>, Region: <{self.region}>, Players: <{len(self._players)}>>"
 
     @property
     def host(self) -> str:
@@ -336,7 +336,7 @@ class Node:
 
 
 class NodePool:
-    """Wavelink NodePool class.
+    """NextLink NodePool class.
 
     This class holds all the Node objects created with :meth:`create_node()`.
     """
@@ -367,7 +367,7 @@ class NodePool:
 
         """|coro|
 
-        Classmethod that creates a :class:`Node` object and stores it for use with WaveLink.
+        Classmethod that creates a :class:`Node` object and stores it for use with NextLink.
 
         Parameters
         ----------
@@ -385,7 +385,7 @@ class NodePool:
             The heartbeat in seconds for the node. Defaults to 30 seconds.
         region: Optional[:class:`discord.VoiceRegion`]
             The discord.py VoiceRegion to assign to the node. This is useful for node region balancing.
-        spotify_client: Optional[:class:`wavelink.ext.spotify.SpotifyClient`]
+        spotify_client: Optional[:class:`nextLink.ext.spotify.SpotifyClient`]
             An optional SpotifyClient with credentials to use when searching for spotify tracks.
         identifier: :class:`str`
             The unique identifier for this Node. By default this will be generated for you.
@@ -393,7 +393,7 @@ class NodePool:
         Returns
         -------
         :class:`Node`
-            The WaveLink Node object.
+            The NextLink Node object.
         """
 
         if identifier is MISSING:
@@ -439,7 +439,7 @@ class NodePool:
         Returns
         --------
         :class:`Node`
-            The WaveLink Node object.
+            The NextLink Node object.
 
         Raises
         --------

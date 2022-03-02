@@ -1,6 +1,6 @@
 """MIT License
 
-Copyright (c) 2019-2021 PythonistaGuild
+Copyright (c) 2022 MikArt, PythonistaGuild
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,7 @@ from nextcord.enums import try_enum
 
 
 __all__ = (
-    "WavelinkError",
+    "NextlinkError",
     "AuthorizationFailure",
     "LavalinkException",
     "LoadTrackError",
@@ -41,15 +41,15 @@ __all__ = (
 )
 
 
-class WavelinkError(Exception):
-    """Base WaveLink Exception"""
+class NextlinkError(Exception):
+    """Base Nextlink Exception"""
 
 
-class AuthorizationFailure(WavelinkError):
+class AuthorizationFailure(NextlinkError):
     """Exception raised when an invalid password is provided toa node."""
 
 
-class LavalinkException(WavelinkError):
+class LavalinkException(NextlinkError):
     """Exception raised when an error occurs talking to Lavalink."""
 
 
@@ -69,24 +69,24 @@ class BuildTrackError(LavalinkException):
         super().__init__(data["error"])
 
 
-class NodeOccupied(WavelinkError):
+class NodeOccupied(NextlinkError):
     """Exception raised when node identifiers conflict."""
 
 
-class InvalidIDProvided(WavelinkError):
-    """Exception raised when an invalid ID is passed somewhere in Wavelink."""
+class InvalidIDProvided(NextlinkError):
+    """Exception raised when an invalid ID is passed somewhere in Nextlink."""
 
 
-class ZeroConnectedNodes(WavelinkError):
+class ZeroConnectedNodes(NextlinkError):
     """Exception raised when an operation is attempted with nodes, when there are None connected."""
 
 
-class NoMatchingNode(WavelinkError):
+class NoMatchingNode(NextlinkError):
     """Exception raised when a Node is attempted to be retrieved with a incorrect identifier."""
 
 
-class QueueException(WavelinkError):
-    """Base WaveLink Queue exception."""
+class QueueException(NextlinkError):
+    """Base Nextlink Queue exception."""
 
     pass
 

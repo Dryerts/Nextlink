@@ -1,6 +1,6 @@
 """MIT License
 
-Copyright (c) 2019-2021 PythonistaGuild
+Copyright (c) 2022 MikArt, PythonistaGuild
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -57,7 +57,7 @@ class Websocket:
         return {
             "Authorization": self.node._password,
             "User-Id": str(self.node.bot.user.id),
-            "Client-Name": "WaveLink",
+            "Client-Name": "NextLink",
             'Resume-Key': self.node.resume_key
         }
 
@@ -68,7 +68,7 @@ class Websocket:
         if self.is_connected():
             assert isinstance(self.websocket, aiohttp.ClientWebSocketResponse)
             await self.websocket.close(
-                code=1006, message=b"WaveLink: Attempting reconnection."
+                code=1006, message=b"NextLink: Attempting reconnection."
             )
 
         host = self.host if self.node._https else self.ws_host
@@ -126,7 +126,7 @@ class Websocket:
                 if msg.data == 1011:
                     # Lavalink encountered an internal error which can not be fixed...
                     # Consider updating Lavalink...
-                    logger.error('Internal Lavalink Error encountered. Terminating WaveLink without retries.'
+                    logger.error('Internal Lavalink Error encountered. Terminating NextLink without retries.'
                                  'Consider updating your Lavalink Server.')
 
                     self.listener.cancel()
@@ -202,7 +202,7 @@ class Websocket:
         return event, payload
 
     def dispatch(self, event, *args: Any, **kwargs: Any) -> None:
-        self.node.bot.dispatch(f"wavelink_{event}", *args, **kwargs)
+        self.node.bot.dispatch(f"nextlink_{event}", *args, **kwargs)
 
     async def send(self, **data: Any) -> None:
         if self.is_connected():
