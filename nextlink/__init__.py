@@ -22,9 +22,9 @@ SOFTWARE.
 """
 
 __title__ = "NextLink"
-__author__ = "PythonistaGuild, EvieePy"
+__author__ = "ArikSquad"
 __license__ = "MIT"
-__copyright__ = "Copyright 2019-2022 (c) PythonistaGuild, EvieePy"
+__copyright__ = "Copyright 2022 (c) MikArt"
 __version__ = "1.0.0"
 
 
